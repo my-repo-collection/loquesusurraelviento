@@ -4,194 +4,341 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lo que susurra el viento - María C. Carreño</title>
+    <title>Lo que susurra el viento — María C. Carreño</title>
+    <meta name="description"
+        content="Descubre 'Lo que susurra el viento', una novela íntima y atmosférica de María C. Carreño. Emociones intensas, amor trascendente y segundas oportunidades. Disponible en ebook y tapa blanda en Amazon.">
+    <meta name="keywords"
+        content="novela, literatura española, amor trascendente, segundas oportunidades, María C. Carreño, ebook, tapa blanda">
+    <meta property="og:title" content="Lo que susurra el viento — María C. Carreño">
+    <meta property="og:description"
+        content="Una novela de emociones intensas que une lo terrenal con lo espiritual. Disponible ahora en Amazon.">
+    <meta property="og:image" content="img/ebook1.png">
+    <meta property="og:url" content="https://tu-sitio.com"> <!-- Reemplaza con URL real -->
+    <meta property="og:type" content="book">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300&display=swap"
+        rel="stylesheet">
+
     <style>
-        /* Estilos generales */
-        body {
-            font-family: 'Arial', sans-serif;
+        :root {
+            --bg-primary: #0f2a2e;
+            --bg-secondary: #1f3f44;
+            --bg-soft: #f2efe9;
+            --text-primary: #102427;
+            --text-secondary: #5e6f73;
+            --accent: #c9bfa8;
+            --white: #ffffff;
+            --shadow-soft: rgba(0, 0, 0, 0.1);
+            --shadow-deep: rgba(0, 0, 0, 0.35);
+        }
+
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            background-color: #F2F2E8;
-            /* Light off-white from house */
-            color: #1F3B4D;
-            /* Dark blue from sky */
-            line-height: 1.6;
+        }
+
+        body {
+            font-family: 'Lato', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: var(--text-primary);
+            background-color: var(--bg-soft);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            border-radius: 8px;
         }
 
         a {
+            color: inherit;
             text-decoration: none;
-            color: #5E7D4E;
-            /* Green from grass */
         }
 
-        /* Header */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
         header {
-            background-color: #fff;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(180deg, var(--bg-primary), var(--bg-secondary));
+            color: var(--white);
+            padding: 6rem 0 8rem;
+            position: relative;
+            overflow: hidden;
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-            color: #1F3B4D;
-            /* Dark blue from sky */
-        }
-
-        /* Sección Hero (Atención) */
         .hero {
-            background-image: url('img/ebook1.png');
-            /* Fondo con la portada del libro, ajusta si es necesario */
-            background-size: cover;
-            background-position: center;
-            color: #fff;
-            text-align: center;
-            padding: 100px 20px;
-            position: relative;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+            align-items: center;
+            animation: fadeIn 1.5s ease-out;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(31, 59, 77, 0.5);
-            /* Overlay based on dark blue #1F3B4D */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 1;
+        @media (min-width: 900px) {
+            .hero {
+                grid-template-columns: 1.2fr 0.8fr;
+            }
         }
 
-        .hero h2 {
-            font-size: 3em;
-            margin-bottom: 10px;
+        .hero-text h1 {
+            font-family: 'Playfair Display', Georgia, "Times New Roman", serif;
+            font-size: clamp(2.8rem, 6vw, 4.2rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
         }
 
-        .hero p {
-            font-size: 1.5em;
-            margin-bottom: 30px;
+        .hero-text p {
+            font-size: 1.2rem;
+            color: #dfe9ea;
+            max-width: 520px;
+            margin-bottom: 2rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            max-width: 400px;
+        }
+
+        .purchase-option {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 1.6rem;
+            backdrop-filter: blur(8px);
+            transition: transform 0.3s ease;
+        }
+
+        .purchase-option:hover {
+            transform: translateY(-4px);
+        }
+
+        .purchase-option strong {
+            font-size: 1.3rem;
+            display: block;
+            margin-bottom: 0.4rem;
+        }
+
+        .purchase-option small {
+            color: #c0d0d3;
+            font-size: 0.95rem;
+            display: block;
+            margin-bottom: 1rem;
         }
 
         .btn {
-            background-color: #5E7D4E;
-            /* Green from grass */
-            color: #fff;
-            padding: 15px 30px;
-            border-radius: 5px;
-            font-size: 1.2em;
-            transition: background-color 0.3s;
-        }
-
-        .btn:hover {
-            background-color: #4A6A3A;
-            /* Darker green */
-        }
-
-        /* Sección Sobre el libro (Interés) */
-        .about-book {
-            padding: 60px 20px;
-            background-color: #F2F2E8;
-            /* Light off-white */
-            text-align: center;
-        }
-
-        .about-book h3 {
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-
-        .about-book p {
-            max-width: 800px;
-            margin: 0 auto 30px;
-        }
-
-        .book-cover {
-            max-width: 300px;
-            margin: 0 auto 30px;
-            display: block;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Sección Sobre la autora (Deseo) */
-        .about-author {
-            padding: 60px 20px;
-            background-color: #D1C0A5;
-            /* Beige from path */
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            padding: 1.1rem 2rem;
+            border-radius: 999px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
             align-items: center;
-            gap: 40px;
+            justify-content: center;
+            gap: 0.6rem;
+            width: 100%;
+            text-align: center;
         }
 
-        .author-photo {
-            max-width: 200px;
-            border-radius: 50%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--text-primary);
         }
 
-        .author-info {
-            max-width: 600px;
-            text-align: left;
+        .btn-primary:hover {
+            background-color: #d8cfb9;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(201, 191, 168, 0.4);
         }
 
-        .author-info h3 {
-            font-size: 2em;
-            margin-bottom: 20px;
+        .hero-cover {
+            justify-self: center;
+            max-width: 380px;
+            box-shadow: 0 40px 100px var(--shadow-deep);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.5s ease;
         }
 
-        /* Sección CTA (Acción) */
+        .hero-cover:hover {
+            transform: scale(1.05);
+        }
+
+        main {
+            padding: 6rem 0;
+        }
+
+        .section {
+            margin-bottom: 6rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .section-text {
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
+        .synopsis {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 24px;
+            box-shadow: 0 15px 40px var(--shadow-soft);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .synopsis p {
+            font-style: italic;
+            color: var(--text-primary);
+            line-height: 1.8;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        @media (min-width: 768px) {
+            .features {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .feature {
+            background-color: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 12px 35px var(--shadow-soft);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-8px);
+        }
+
+        .feature h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .feature p {
+            color: var(--text-secondary);
+        }
+
+        .author {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 768px) {
+            .author {
+                grid-template-columns: 0.8fr 1.2fr;
+            }
+        }
+
+        .author img {
+            max-width: 300px;
+            margin: 0 auto;
+            box-shadow: 0 20px 50px var(--shadow-soft);
+        }
+
+        .author-text {
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .author-text {
+                text-align: left;
+            }
+        }
+
         .cta {
-            background-color: #1F3B4D;
-            /* Dark blue from sky */
-            color: #fff;
+            background: linear-gradient(180deg, var(--bg-secondary), var(--bg-primary));
+            color: var(--white);
+            padding: 6rem 1.5rem;
+            border-radius: 32px;
             text-align: center;
-            padding: 60px 20px;
+            box-shadow: 0 20px 60px var(--shadow-deep);
         }
 
-        .cta h3 {
-            font-size: 2em;
-            margin-bottom: 20px;
+        .cta h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
         }
 
-        .cta .btn {
-            margin: 10px;
+        .cta p {
+            color: #dfe9ea;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            font-size: 1.2rem;
         }
 
-        /* Footer */
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 500px) {
+            .cta-buttons {
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            .btn {
+                width: auto;
+                min-width: 240px;
+            }
+        }
+
         footer {
-            background-color: #3F5B5F;
-            /* Teal from shutters */
-            color: #fff;
+            padding: 4rem 1.5rem;
             text-align: center;
-            padding: 20px;
-            font-size: 0.9em;
-        }
-
-        /* Responsividad */
-        @media (max-width: 768px) {
-            .hero h2 {
-                font-size: 2em;
-            }
-
-            .hero p {
-                font-size: 1.2em;
-            }
-
-            .about-author {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .author-info {
-                text-align: center;
-            }
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
         }
     </style>
 </head>
@@ -199,52 +346,127 @@
 <body>
 
     <header>
-        <h1>Lo que susurra el viento</h1>
+        <div class="container hero">
+            <div class="hero-text">
+                <h1>Lo que susurra el viento</h1>
+                <p>
+                    Después de una pérdida que marcó su vida, Lucía viaja al interior para comenzar de nuevo. En la
+                    misteriosa estancia El Despertar, rodeada de naturaleza y silencio, encontrará más que un nuevo
+                    trabajo: un encuentro que desafiará su lógica y su pasado.
+                </p>
+                <p>
+                    Una novela de emociones intensas, amor trascendente y segundas oportunidades que une lo terrenal con
+                    lo espiritual.
+                </p>
+
+                <div class="hero-actions">
+                    <div class="purchase-option">
+                        <strong>Ebook </strong>
+                        <small>Formato digital • Lectura inmediata en cualquier dispositivo. Perfecto para sumergirte
+                            ahora mismo.</small>
+                        <a class="btn btn-primary"
+                            href="https://www.amazon.com/-/es/Mar%C3%ADa-C-Carre%C3%B1o-ebook/dp/B0G679V4QL/ref=sr_1_2?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=YOAZ75CGJKCI&dib=eyJ2IjoiMSJ9.v9wHAFh4NmKHGfbi6luohzfV9znAhm_7GnZPjPXwG6sex2jVH_mpFpclVtcvIh2vkIwkEnrFz_LD3PXwTkvhvxuq4FNpyDUEr-_zBNxZsuPI6jJ39vS2BK2mEy3-nfZgz4NdrDszu_m4i6j5IiEbv7KqsgGBRrRC4nQPkkFp713fpmmLYDfWeQB3slEHgnqfC9ciokkMeeLjDzXVMvTtRMNkvZCM93IrQ6iJQ9AjwBE.ECin9RVOHYbzLXLnMbZzEvSV2OowaLl6vKbbkGUGSEw&dib_tag=se&keywords=lo+que+susurra+el+viento+libro&qid=1768665638&sprefix=lo+que+susurra+el+viento+libr%2Caps%2C267&sr=8-2"
+                            target="_blank" rel="noopener noreferrer">
+                            Comprar ebook ahora
+                        </a>
+                    </div>
+
+                    <div class="purchase-option">
+                        <strong>Tapa blanda</strong>
+                        <small>Edición física • Libro en papel con envío a domicilio. Ideal para coleccionistas y
+                            lecturas pausadas.</small>
+                        <a class="btn btn-primary"
+                            href="https://www.amazon.com/-/es/Mar%C3%ADa-C-Carre%C3%B1o/dp/B0GG9CTR38/ref=sr_1_3?crid=2GEAVSGTHLEUS&dib=eyJ2IjoiMSJ9.bQjFLBAwume479SnSfEsAilsyOjFM12LZnfrPOHqPer9pbNQEdRoEz4PoUO1QkxtIcxAJA3v_dahZgJ0ui38N-DjQVBdf1WA3tpuUa6tc-KPjGptzy61XP7oiO1mjoC3kODHHjAZakZb24jDHsxvBSPh-KQc_f_Sn3EVbbXatMJpW4RSiB68Mmn42x5aAu53Qq1Uo3qsz3JpMqtg53SZU6I_F07qdrk__IJiwLonels.MyqmBkFq70lWKMS5uYVv0mFvFjVZZxu61QX5G9khVIU&dib_tag=se&keywords=lo+que+susurra+el+viento&qid=1768679524&sprefix=lo+que+susurra+e%2Caps%2C230&sr=8-3"
+                            target="_blank" rel="noopener noreferrer">
+                            Comprar tapa blanda
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-cover">
+                <img src="img/ebook1.png" alt="Portada del libro Lo que susurra el viento">
+            </div>
+        </div>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h2>Descubre los secretos que el viento guarda</h2>
-            <p>Una novela cautivadora de María C. Carreño que te transportará a un mundo de misterio y emociones.</p>
-            <a href="https://www.amazon.com/-/es/Mar%C3%ADa-C-Carre%C3%B1o-ebook/dp/B0G679V4QL/ref=sr_1_2?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=YOAZ75CGJKCI&dib=eyJ2IjoiMSJ9.v9wHAFh4NmKHGfbi6luohzfV9znAhm_7GnZPjPXwG6sex2jVH_mpFpclVtcvIh2vkIwkEnrFz_LD3PXwTkvhvxuq4FNpyDUEr-_zBNxZsuPI6jJ39vS2BK2mEy3-nfZgz4NdrDszu_m4i6j5IiEbv7KqsgGBRrRC4nQPkkFp713fpmmLYDfWeQB3slEHgnqfC9ciokkMeeLjDzXVMvTtRMNkvZCM93IrQ6iJQ9AjwBE.ECin9RVOHYbzLXLnMbZzEvSV2OowaLl6vKbbkGUGSEw&dib_tag=se&keywords=lo+que+susurra+el+viento+libro&qid=1768665638&sprefix=lo+que+susurra+el+viento+libr%2Caps%2C267&sr=8-2"
-                class="btn" target="_blank">Comprar eBook</a>
-            <a href="#" class="btn" target="_blank">Comprar Tapa Blanda (Próximamente)</a>
-            <!-- Espacio para el link de tapa blanda -->
-        </div>
-    </section>
+    <main class="container">
 
-    <section class="about-book">
-        <img src="img/ebook1.png" alt="Portada del libro Lo que susurra el viento" class="book-cover">
-        <h3>Sobre el libro</h3>
-        <p>En "Lo que susurra el viento", María C. Carreño teje una historia llena de intriga, amor y descubrimientos
-            inesperados. Ambientada en paisajes evocadores, esta novela explora los susurros del pasado que moldean
-            nuestro presente.</p>
-        <p>Ideal para lectores que disfrutan de narrativas profundas y personajes inolvidables. ¡No te pierdas esta joya
-            literaria!</p>
-    </section>
+        <section class="section synopsis">
+            <h2 class="section-title">Una historia que te susurrará al alma</h2>
+            <p class="section-text">Richard Johnson, el dueño del lugar, es un hombre de voz profunda y secretos
+                antiguos. Algo en él la atrae y la inquieta. A través de sueños, recuerdos y señales imposibles, Lucía
+                irá comprendiendo que su llegada no fue casualidad.</p>
+            <p>Lo que susurra el viento es una novela de emociones intensas, amor trascendente y segundas oportunidades.
+                Un relato que une lo terrenal con lo espiritual, lo visible con lo que solo el alma puede escuchar. No
+                es solo una lectura: es una experiencia que te transformará.</p>
+        </section>
 
-    <section class="about-author">
-        <img src="img/autor.jpeg" alt="Foto de María C. Carreño" class="author-photo">
-        <div class="author-info">
-            <h3>Sobre la autora: María C. Carreño</h3>
-            <p>María C. Carreño es una escritora apasionada con una trayectoria en la literatura contemporánea. Sus
-                obras se caracterizan por su profundidad emocional y su habilidad para capturar la esencia humana.</p>
-            <p>Con "Lo que susurra el viento", María invita a los lectores a un viaje introspectivo que dejará una
-                huella duradera.</p>
-        </div>
-    </section>
+        <section class="section">
+            <h2 class="section-title">Por qué esta novela te cautivará</h2>
+            <p class="section-text">Descubre una narrativa que avanza con la sutileza de los recuerdos, invitándote a
+                una inmersión profunda en emociones auténticas y atmósferas inolvidables.</p>
 
-    <section class="cta">
-        <h3>¡No esperes más! Adquiere tu copia hoy</h3>
-        <a href="https://www.amazon.com/-/es/Mar%C3%ADa-C-Carre%C3%B1o-ebook/dp/B0G679V4QL/ref=sr_1_2?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=YOAZ75CGJKCI&dib=eyJ2IjoiMSJ9.v9wHAFh4NmKHGfbi6luohzfV9znAhm_7GnZPjPXwG6sex2jVH_mpFpclVtcvIh2vkIwkEnrFz_LD3PXwTkvhvxuq4FNpyDUEr-_zBNxZsuPI6jJ39vS2BK2mEy3-nfZgz4NdrDszu_m4i6j5IiEbv7KqsgGBRrRC4nQPkkFp713fpmmLYDfWeQB3slEHgnqfC9ciokkMeeLjDzXVMvTtRMNkvZCM93IrQ6iJQ9AjwBE.ECin9RVOHYbzLXLnMbZzEvSV2OowaLl6vKbbkGUGSEw&dib_tag=se&keywords=lo+que+susurra+el+viento+libro&qid=1768665638&sprefix=lo+que+susurra+el+viento+libr%2Caps%2C267&sr=8-2"
-            class="btn" target="_blank">Comprar eBook en Amazon</a>
-        <a href="#" class="btn" target="_blank">Comprar Tapa Blanda (Próximamente)</a>
-        <!-- Espacio para el link de tapa blanda -->
-    </section>
+            <div class="features">
+                <div class="feature">
+                    <h3>Atmosférica e inmersiva</h3>
+                    <p>Cada página te envuelve en un clima de misterio y presencia, donde lo invisible se hace sentir
+                        con intensidad.</p>
+                </div>
+                <div class="feature">
+                    <h3>Íntima y reflexiva</h3>
+                    <p>Una historia que se lee hacia adentro, explorando pensamientos profundos y conexiones emocionales
+                        sin interrupciones.</p>
+                </div>
+                <div class="feature">
+                    <h3>Elegante y sutil</h3>
+                    <p>Sin excesos ni dramas forzados: confía en tu sensibilidad como lector para revelar sus capas más
+                        profundas.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section author">
+            <img src="img/autor.jpeg" alt="María C. Carreño">
+            <div class="author-text">
+                <h2 class="section-title">Sobre la autora</h2>
+                <p class="section-text">
+                    María C. Carreño escribe desde la observación sutil, capturando lo no dicho y lo que perdura en el
+                    silencio. Su prosa, rica en sensibilidad, ritmo y atmósfera, invita a lecturas profundas y serenas
+                    que resuenan en el alma.
+                </p>
+            </div>
+        </section>
+
+        <section class="cta">
+            <h2>¿Estás listo para escuchar lo que el viento susurra?</h2>
+            <p>Sumérgete en una novela que transformará tu percepción del amor y lo espiritual. Disponible ahora en
+                formato digital para lectura inmediata o en tapa blanda para atesorar. No esperes: esta historia te está
+                llamando.</p>
+
+            <div class="cta-buttons">
+                <a class="btn btn-primary"
+                    href="https://www.amazon.com/-/es/Mar%C3%ADa-C-Carre%C3%B1o-ebook/dp/B0G679V4QL/ref=sr_1_2?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=YOAZ75CGJKCI&dib=eyJ2IjoiMSJ9.v9wHAFh4NmKHGfbi6luohzfV9znAhm_7GnZPjPXwG6sex2jVH_mpFpclVtcvIh2vkIwkEnrFz_LD3PXwTkvhvxuq4FNpyDUEr-_zBNxZsuPI6jJ39vS2BK2mEy3-nfZgz4NdrDszu_m4i6j5IiEbv7KqsgGBRrRC4nQPkkFp713fpmmLYDfWeQB3slEHgnqfC9ciokkMeeLjDzXVMvTtRMNkvZCM93IrQ6iJQ9AjwBE.ECin9RVOHYbzLXLnMbZzEvSV2OowaLl6vKbbkGUGSEw&dib_tag=se&keywords=lo+que+susurra+el+viento+libro&qid=1768665638&sprefix=lo+que+susurra+el+viento+libr%2Caps%2C267&sr=8-2"
+                    target="_blank" rel="noopener noreferrer">
+                    Comprar ebook
+                </a>
+                <a class="btn btn-primary"
+                    href="https://www.amazon.com/-/es/Mar%C3%ADa-C-Carre%C3%B1o/dp/B0GG9CTR38/ref=sr_1_3?crid=2GEAVSGTHLEUS&dib=eyJ2IjoiMSJ9.bQjFLBAwume479SnSfEsAilsyOjFM12LZnfrPOHqPer9pbNQEdRoEz4PoUO1QkxtIcxAJA3v_dahZgJ0ui38N-DjQVBdf1WA3tpuUa6tc-KPjGptzy61XP7oiO1mjoC3kODHHjAZakZb24jDHsxvBSPh-KQc_f_Sn3EVbbXatMJpW4RSiB68Mmn42x5aAu53Qq1Uo3qsz3JpMqtg53SZU6I_F07qdrk__IJiwLonels.MyqmBkFq70lWKMS5uYVv0mFvFjVZZxu61QX5G9khVIU&dib_tag=se&keywords=lo+que+susurra+el+viento&qid=1768679524&sprefix=lo+que+susurra+e%2Caps%2C230&sr=8-3"
+                    target="_blank" rel="noopener noreferrer">
+                    Comprar tapa blanda
+                </a>
+            </div>
+        </section>
+
+    </main>
 
     <footer>
-        <p>&copy; 2026 María C. Carreño. Todos los derechos reservados.</p>
+        © <span id="year"></span> María C. Carreño · Todos los derechos reservados
     </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
 
 </body>
 
